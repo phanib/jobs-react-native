@@ -1,10 +1,13 @@
 import React from 'react';
-import {View, Button, Text} from 'react-native';
+import {View, Button, Text, Platform} from 'react-native';
 
 class ReviewScreen extends React.Component {
     static navigationOptions = ({navigation, screenProps}) => ({
         title: 'Review Screen',
-        headerRight: (<Button title="go" onPress={()=> navigation.navigate('settings')} />)
+        headerRight: (<Button title="settings" onPress={()=> navigation.navigate('settings')} />),
+        headerStyle: { 
+            marginTop: Platform.OS === 'android' ? 50 : 0
+        }
     })
 
     render() {

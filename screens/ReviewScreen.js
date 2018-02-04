@@ -1,7 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Button, Text} from 'react-native';
 
 class ReviewScreen extends React.Component {
+    static navigationOptions = ({navigation, screenProps}) => ({
+        title: 'Review Screen',
+        headerRight: (<Button title="go" onPress={()=> navigation.navigate('settings')} />)
+    })
+
     render() {
         return(
             <View>

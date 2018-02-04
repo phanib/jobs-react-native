@@ -4,10 +4,18 @@ import { TabNavigator } from 'react-navigation';
 
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
+import MapScreen from './screens/MapScreen'
+import DeckScreen from './screens/DeckScreen';
 
 const MainNavigator = TabNavigator({
-  Welcome: {screen: WelcomeScreen},
-  Auth: { screen: AuthScreen }
+  welcome: {screen: WelcomeScreen},
+  auth: { screen: AuthScreen },
+  main: {
+    screen: TabNavigator({
+      map: { screen: MapScreen},
+      deck: { screen: DeckScreen} 
+    })
+  }
 }
 );
 
